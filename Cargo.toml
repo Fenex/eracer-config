@@ -12,3 +12,8 @@ description = "Utility that add support high resolution and widescreen to e-Race
 registry = "1.2.1"
 clap = { version = "3.0.14", features = ["derive"] }
 sha2 = "0.10.1"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1

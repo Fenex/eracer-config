@@ -1,0 +1,29 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: cargo test --verbose
+    - name: Build Release
+      run: cargo build --release --verbose
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        # Artifact name
+        name: eracer-config
+        # A file, directory or wildcard pattern that describes what to upload
+        path: target/release/eracer-config.exe
