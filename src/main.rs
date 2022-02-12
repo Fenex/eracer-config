@@ -21,7 +21,7 @@ use crate::ratio::*;
 use crate::resolution::*;
 
 const SHA2_ORIGINAL_BINARY: &[u8; 32] = &[
-    0x7A, 0x3B, 0xF7, 0x73, 0xCB, 0x62, 0xB, 0x8C, 0x54, 0x7E, 0xE0, 0x4B, 0x40, 0xCD, 0x43, 0xA3,
+    0x7A, 0x3B, 0xF7, 0x73, 0xCB, 0x62, 0x0B, 0x8C, 0x54, 0x7E, 0xE0, 0x4B, 0x40, 0xCD, 0x43, 0xA3,
     0x8D, 0x9C, 0x96, 0x9B, 0x92, 0x5E, 0x9B, 0xEC, 0xA5, 0x36, 0x3B, 0x40, 0x58, 0x8F, 0x93, 0x80,
 ];
 
@@ -31,8 +31,8 @@ const RATIO_LENGTH: usize = 3;
 const RATIO_ORIGINAL: &[u8; RATIO_LENGTH] = &[0x3A, 0x46, 0x71];
 
 const ENTRY_KEY: &str = r"Software\Rage Games Ltd\eRacer";
-const INSTALLDIR_KEY: &str = r"HOVAPPDATA";
 const EXECUTABLE: &str = r"eracer.exe";
+const INSTALLDIR_KEY: &str = r"HOVAPPDATA";
 const RESOLUTION_WIDTH_KEY: &str = r"PREFERRED WIDTH";
 const RESOLUTION_HEIGHT_KEY: &str = r"PREFERRED HEIGHT";
 
@@ -41,7 +41,6 @@ struct Settings {
     registry_path: PathBuf,
     override_path: Option<PathBuf>,
     resolution: Resolution,
-    // ratio: Ratio
 }
 
 impl std::fmt::Debug for Settings {
@@ -51,7 +50,7 @@ impl std::fmt::Debug for Settings {
             .field("override_path", &self.override_path)
             .field("path", &self.path())
             .field("resolution", &self.resolution)
-            .field("resolution", &self.ratio())
+            .field("ratio", &self.ratio())
             .finish()
     }
 }
