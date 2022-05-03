@@ -1,6 +1,6 @@
 [package]
 name = "eracer-config"
-version = "1.0.0"
+version = "1.1.0"
 edition = "2021"
 authors = ["Vitaliy Busko <vitaliy.opensource@gmail.com>"]
 license = "MIT"
