@@ -1,6 +1,7 @@
 use std::{fmt::Display, ops::Deref};
 
-use crate::RATIO_ORIGINAL;
+pub const RATIO_LENGTH: usize = 3;
+pub const RATIO_ORIGINAL: &[u8; RATIO_LENGTH] = &[0x3A, 0x46, 0x71];
 
 #[derive(Debug, Default)]
 pub struct RatioIterator(usize);
@@ -35,7 +36,7 @@ pub enum Ratio {
 }
 
 impl Ratio {
-    pub fn hex(&self) -> &[u8; 3] {
+    pub fn hex(&self) -> &[u8; RATIO_LENGTH] {
         match self {
             Ratio::Original => RATIO_ORIGINAL,
             Ratio::W5H4 => &[0x66, 0x66, 0x66],
@@ -74,6 +75,16 @@ impl Ratio {
 impl Display for Ratio {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}:{}", self.w(), self.h())
+    }
+}
+
+impl TryFrom<&[u8; 3]> for Ratio {
+    type Error = &'static str;
+
+    fn try_from(value: &[u8; 3]) -> Result<Self, Self::Error> {
+        Ratio::variants()
+            .find(|r| r.hex() == value)
+            .ok_or("Incorrect value of aspect ratio.")
     }
 }
 
