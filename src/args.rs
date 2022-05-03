@@ -16,7 +16,7 @@ pub struct Args {
     pub set_aspect_ratio: Option<Ratio>,
     #[clap(long, help = "Reset aspect ratio to original")]
     pub reset_aspect_ratio: bool,
-    #[clap(long, help = "Path to eracer.exe")]
+    #[clap(long, help = "Override path to eracer.exe (gets from windows' registry if not set)")]
     pub binary_path: Option<PathBuf>,
 }
 
