@@ -4,7 +4,7 @@ The game is pretty old and unfortunately there is not support high resolution an
 
 If your `eracer.exe` is not running at all, try to set execution compatibility with `Windows XP SP3`.
 
-## Change resolution of e-Racer via `eracer-config`:
+## Change resolution of e-Racer via [`eracer-config`](https://github.com/Fenex/eracer-config/releases):
 
 Run `eracer-config` without any arguments to see current settings of the game.
 To change resolution run: `eracer-config --set-resolution 1920x1200`.
