@@ -44,6 +44,28 @@ impl Patch for PatchEN_992 {
     }
 }
 
+#[allow(non_camel_case_types)]
+#[derive(Debug, Clone)]
+pub(super) struct Patch_Zoom;
+
+impl Patch for Patch_Zoom {
+    fn name(&self) -> &'static str {
+        "Zoom Platform 992 KB"
+    }
+
+    fn sha2(&self) -> &'static [u8; 32] {
+        &[
+            0x5E, 0x04, 0xA6, 0x30, 0x4C, 0x4F, 0xBE, 0xBD, 0xE4, 0x66, 0xC3, 0x8C, 0xF4, 0xD5,
+            0xBB, 0xE6, 0xF2, 0xD3, 0xFD, 0xC6, 0x21, 0xAF, 0x2F, 0xDA, 0xA3, 0xB9, 0xCD, 0x24,
+            0xFE, 0xBE, 0x20, 0x35,
+        ]
+    }
+
+    fn ratio_offset(&self) -> usize {
+        0x000CAEFC
+    }
+}
+
 // #[cfg(test)]
 // mod test {
 //     use std::{

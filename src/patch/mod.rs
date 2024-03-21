@@ -84,10 +84,10 @@ fn get_patch_by_binary<R: Read>(reader: &mut R) -> Option<(Box<dyn Patch>, [u8; 
         .find(Option::is_some)?
 }
 
-const PATCHES_COUNT: usize = 2;
+const PATCHES_COUNT: usize = 3;
 
 fn get_all_patches() -> [Box<dyn Patch>; PATCHES_COUNT] {
-    [Box::new(items::PatchRU_1008), Box::new(items::PatchEN_992)]
+    [Box::new(items::PatchRU_1008), Box::new(items::PatchEN_992), Box::new(items::Patch_Zoom)]
 }
 
 pub trait Patch {
