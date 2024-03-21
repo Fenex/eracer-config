@@ -4,6 +4,10 @@ The game is pretty old and unfortunately there is not support high resolution an
 
 If your `eracer.exe` is not running at all, try to set execution compatibility with `Windows XP SP3`.
 
+e-Racer is not good at handling non-native full-screen resolutions. If e-Racer crashes at startup, setting the same resolution to the display and your `eracer.exe` may help.
+
+Even higher resolution than 1920x1200 (for example, 2560x1440) can be configured with this tool, but it is likely to fail to initialize DirectX.
+
 ## Change resolution of e-Racer via [`eracer-config`](https://github.com/Fenex/eracer-config/releases):
 
 Run `eracer-config` without any arguments to see current settings of the game.
