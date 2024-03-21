@@ -1,6 +1,6 @@
 [package]
 name = "eracer-config"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2021"
 authors = ["Vitaliy Busko <vitaliy.opensource@gmail.com>"]
 license = "MIT"
@@ -9,9 +9,9 @@ description = "Utility that add support high resolution and widescreen to e-Race
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-registry = "1.2.1"
-clap = { version = "3.0.14", features = ["derive"] }
-sha2 = "0.10.1"
+registry = "1.2"
+clap = { version = "3", features = ["derive"] }
+sha2 = "0.10"
 
 [profile.release]
 opt-level = "s"
